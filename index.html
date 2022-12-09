@@ -12,7 +12,8 @@
         {{ message }} <br/>
         <a :[atr]="link">link to vuejs></a>
         <!-- this will re-render DOM based on the conditions -->
-        <h3> show age based on if conditions </h3>
+        <h3 :style="{fontSize: fontSize + 'px', color: 'red'}"> show age based on if conditions </h3>
+        <h3 :style="myStyle">show age based on if conditions </h3>
         <h4 @mouseover="age=0">  AGE {{age}}</h4>
         <p v-if="age < 30"> you are in your young age </p>
         <p v-else-if="age >= 30 && age <=70"> you are in your middle age </p>
@@ -47,7 +48,12 @@
               books: [
                   {id: 0, title: "where is my cow?", year: 2020},
                   {id: 1, title: "Lonely farmer", year: 2022},
-                ]
+                ],
+              fontSize: 30,
+              myStyle:{
+                  fontSize: 50,
+                  color: 'green'
+              }
             }   
             },
             methods: {
