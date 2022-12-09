@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style> 
+        .greenauth{
+            color: greenyellow;
+            font-size: 50px;
+        }
+        .red{
+            color: rebeccapurple;
+            font-size: 50px;
+        }
+    
+    </style>
 </head>
 <body>
     <div id="app">
@@ -14,6 +25,9 @@
         <!-- this will re-render DOM based on the conditions -->
         <h3 :style="{fontSize: fontSize + 'px', color: 'red'}"> show age based on if conditions </h3>
         <h3 :style="myStyle">show age based on if conditions </h3>
+        <h3 :style="{fontSize: fontSize + 'px', color: 'red'}"> show age based on if conditions </h3>
+        <h3 :class="{greenauth: authorized}">show age based on authorization: authorized </h3>
+        <h3 :class="{red: unauthorized}">show age based on authorization: NOT authorized </h3>
         <h4 @mouseover="age=0">  AGE {{age}}</h4>
         <p v-if="age < 30"> you are in your young age </p>
         <p v-else-if="age >= 30 && age <=70"> you are in your middle age </p>
@@ -45,6 +59,8 @@
               link: "http://www.vuejs.org",
               atr: "href",
               age: 35,
+              authorized: true,
+              unauthorized: true,
               books: [
                   {id: 0, title: "where is my cow?", year: 2020},
                   {id: 1, title: "Lonely farmer", year: 2022},
