@@ -11,6 +11,19 @@
     <div id="app">
         {{ message }} <br/>
         <a :[atr]="link">link to vuejs></a>
+        <!-- this will re-render DOM based on the conditions -->
+        <h3> show age based on if conditions </h3>
+        <h4>  AGE </h4>
+        <p v-if="age < 30"> you are in your young age </p>
+        <p v-else-if="age >= 30 && age <=70"> you are in your middle age </p>
+        <p v-else="age>70"> you are in your old age </p>
+        <!-- this will add stype display:none and hide the values based on conditions -->
+        <h3> show age based on show syntax </h3>
+        <h4>  AGE </h4>
+        <p v-show="age < 30"> you are in your young age </p>
+        <p v-show="age >= 30 && age <=70"> you are in your middle age </p>
+        <p v-show="age>70"> you are in your old age </p>
+  
     </div>
     
     <script>
@@ -20,7 +33,8 @@
             return {
               message: 'Hello Vue!',
               link: "http://www.vuejs.org",
-              atr: "href"
+              atr: "href",
+              age: 35
             }
           }
         }).mount('#app')
