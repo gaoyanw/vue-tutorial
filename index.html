@@ -24,6 +24,14 @@
         <p v-show="age >= 30 && age <=70"> you are in your middle age </p>
         <p v-show="age>70"> you are in your old age </p>
   
+        <h2> The demo for FOR LOOP</h2>
+        <ul>    
+            <li v-for="book in books" :key="book.id">
+                {{book.title}} in {{book.year}}
+            </li>
+
+            </li>
+        </ul>
     </div>
     
     <script>
@@ -34,7 +42,11 @@
               message: 'Hello Vue!',
               link: "http://www.vuejs.org",
               atr: "href",
-              age: 35
+              age: 35,
+              books: [
+                  {id: 0, title: "where is my cow?", year: 2020},
+                  {id: 1, title: "Lonely farmer", year: 2022},
+]
             }
           }
         }).mount('#app')
