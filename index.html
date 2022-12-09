@@ -8,14 +8,19 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-    <div id="app">{{ message }}</div>
+    <div id="app">
+        {{ message }} <br/>
+        <a :[atr]="link">link to vuejs></a>
+    </div>
     
     <script>
         const { createApp } = Vue
         createApp({
           data() {
             return {
-              message: 'Hello Vue!'
+              message: 'Hello Vue!',
+              link: "http://www.vuejs.org",
+              atr: "href"
             }
           }
         }).mount('#app')
