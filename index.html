@@ -13,7 +13,7 @@
         <a :[atr]="link">link to vuejs></a>
         <!-- this will re-render DOM based on the conditions -->
         <h3> show age based on if conditions </h3>
-        <h4>  AGE </h4>
+        <h4 @mouseover="age=0">  AGE {{age}}</h4>
         <p v-if="age < 30"> you are in your young age </p>
         <p v-else-if="age >= 30 && age <=70"> you are in your middle age </p>
         <p v-else="age>70"> you are in your old age </p>
@@ -23,7 +23,8 @@
         <p v-show="age < 30"> you are in your young age </p>
         <p v-show="age >= 30 && age <=70"> you are in your middle age </p>
         <p v-show="age>70"> you are in your old age </p>
-  
+        <h2>  The demo for add 10 to age once click </h2>
+        <button @click="add10ToAge">   click, add 10 to age </button>
         <h2> The demo for FOR LOOP</h2>
         <ul>    
             <li v-for="book in books" :key="book.id">
@@ -46,8 +47,13 @@
               books: [
                   {id: 0, title: "where is my cow?", year: 2020},
                   {id: 1, title: "Lonely farmer", year: 2022},
-]
-            }
+                ]
+            }   
+            },
+            methods: {
+                add10ToAge: function(){
+                    this.age += 10
+                }
           }
         }).mount('#app')
       </script>
