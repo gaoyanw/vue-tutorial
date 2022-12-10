@@ -20,7 +20,48 @@
 </head>
 <body>
     <div id="app">
-       <h1>{{ fullMessage }} </h1>  <br/>
+        <!-- Vue provide a TWO WAY binding model, that is the value selected in the input is SYNCED with
+        the value in the data. The input will use the default parameter value in the data, and the 
+        new data captured in the input will update the parameter value in data  -->
+        <h2> Demo for radio input box </h2>
+        <!-- bind the input to the parameter "name" -->
+        <p> Let us know your name </p>
+        <input v-model="name" placeholder="type your name">
+        <p>{{ fullMessage }} </p>  <br/>
+        
+        <h2> Demo for textarea </h2>
+        <!-- bind input to selfIntroduction -->
+        <p> Fill in your self introduction</p> 
+        <textarea v-model="selfIntroduction" placeholder="Please fill an introduction"></textarea>
+        <p> Your self introduction is: {{ selfIntroduction }} </p>  <br/>
+
+
+        <h2> Demo for radio checkbox</h2>
+        <input type="checkbox" id="checkbox1" v-model="agreed">
+        <lable for="checkbox1"> the box is checked/agreed, {{agreed}}</lable><br/>
+        
+        <h2> Demo for radio button</h2>
+        <input type="radio" id="radio1" value="a" v-model="option">
+        <label for="radio1"> A: this is my first choice</label> <br/>
+        <input type="radio" id="radio2" value="b" v-model="option">
+        <label for="radio2"> B: this is my second choice </label> <br/>         
+        <input type="radio" id="radio3" value="c" v-model="option">
+        <label for="radio3"> C: this is my third choice </label> <br/>        
+        <input type="radio" id="radio4" value="d" v-model="option">
+        <label for="radio4"> D: this is my forth choice </label> <br/>
+        <p>My current option: {{option}}</p>
+
+        <h2> Demo for select</h2>
+        <select v-model="option2">
+            <option value="a">A: this is my first choice</option>
+            <option value="b">B: this is my second choice</option>
+            <option value="c">C: this is my third choice </option>
+            <option value="d">D: this is my forth choice </option>
+        </select>
+        <p>My current option: {{option2}}</p>
+
+        <br/>
+
         <a :[atr]="link">link to vuejs></a>
         <!-- this will re-render DOM based on the conditions -->
         <h3 :style="{fontSize: fontSize + 'px', color: 'red'}"> show age based on if conditions </h3>
@@ -55,8 +96,13 @@
         createApp({
           data() {
             return {
-              message: 'Hello, Welcome to my space!',
-              name: "Gaoyan",
+              message: 'Hello, Welcome to my space, ',
+              name: "",
+              selfIntroduction: "",
+              agreed: false,
+              option: "a",
+              color: "0",
+              option2: "c",
               link: "http://www.vuejs.org",
               atr: "href",
               age: 35,
