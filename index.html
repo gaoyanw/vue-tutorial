@@ -119,17 +119,17 @@
               }
             }   
             },
-            methods: {
-                add10ToAge: function(){
-                    this.age += 10
-                }
+        methods: {
+            add10ToAge: function(){
+                this.age += 10
+            }
           },
         //   computered properties are cached, if message or name changed, it will be updated, otherwise it does not consume computing power
         // it is considered as parameters. Not function, not computed every time.
-          computed:{
+        computed:{
             fullMessage: function(){
-                    return this.message + this.name
-                }
+                return this.message + this.name
+            }
           }
         }).mount('#app')
       </script>
