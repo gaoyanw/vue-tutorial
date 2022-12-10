@@ -130,7 +130,11 @@
             fullMessage: function(){
                 return this.message + this.name
             }
-          }
+          },
+        created: function() {
+            this.name = "Tera"
+            console.log("I loaded the name to Tera when the Vue instance is created")
+        }
         }).mount('#app')
       </script>
     
